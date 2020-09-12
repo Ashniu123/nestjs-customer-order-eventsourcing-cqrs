@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@customer/customer-common": [
+        "libs/customer-common/src"
+      ],
+      "@customer/customer-common/*": [
+        "libs/customer-common/src/*"
+      ],
+      "@order/order-common": [
+        "libs/order-common/src"
+      ],
+      "@order/order-common/*": [
+        "libs/order-common/src/*"
+      ],
+      "@kafka/kafka": [
+        "libs/kafka/src"
+      ],
+      "@kafka/kafka/*": [
+        "libs/kafka/src/*"
+      ]
+    }
+  }
+}

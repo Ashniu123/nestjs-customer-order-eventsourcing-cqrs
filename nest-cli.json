@@ -1,0 +1,84 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-customer-order-eventsourcing-example/src",
+  "monorepo": true,
+  "root": "apps/nestjs-customer-order-eventsourcing-example",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-customer-order-eventsourcing-example/tsconfig.app.json"
+  },
+  "projects": {
+    "nestjs-customer-order-eventsourcing-example": {
+      "type": "application",
+      "root": "apps/nestjs-customer-order-eventsourcing-example",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-customer-order-eventsourcing-example/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-customer-order-eventsourcing-example/tsconfig.app.json"
+      }
+    },
+    "order-view-svc": {
+      "type": "application",
+      "root": "apps/order-view-svc",
+      "entryFile": "main",
+      "sourceRoot": "apps/order-view-svc/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order-view-svc/tsconfig.app.json"
+      }
+    },
+    "order-svc": {
+      "type": "application",
+      "root": "apps/order-svc",
+      "entryFile": "main",
+      "sourceRoot": "apps/order-svc/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order-svc/tsconfig.app.json"
+      }
+    },
+    "customer-view-svc": {
+      "type": "application",
+      "root": "apps/customer-view-svc",
+      "entryFile": "main",
+      "sourceRoot": "apps/customer-view-svc/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/customer-view-svc/tsconfig.app.json"
+      }
+    },
+    "customer-svc": {
+      "type": "application",
+      "root": "apps/customer-svc",
+      "entryFile": "main",
+      "sourceRoot": "apps/customer-svc/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/customer-svc/tsconfig.app.json"
+      }
+    },
+    "customer-common": {
+      "type": "library",
+      "root": "libs/customer-common",
+      "entryFile": "index",
+      "sourceRoot": "libs/customer-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/customer-common/tsconfig.lib.json"
+      }
+    },
+    "order-common": {
+      "type": "library",
+      "root": "libs/order-common",
+      "entryFile": "index",
+      "sourceRoot": "libs/order-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/order-common/tsconfig.lib.json"
+      }
+    },
+    "kafka": {
+      "type": "library",
+      "root": "libs/kafka",
+      "entryFile": "index",
+      "sourceRoot": "libs/kafka/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/kafka/tsconfig.lib.json"
+      }
+    }
+  }
+}
