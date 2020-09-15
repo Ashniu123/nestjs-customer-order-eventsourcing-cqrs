@@ -42,7 +42,7 @@ export class AppModule implements OnModuleInit {
       groupId: 'nestjs-customer-orders-orders',
     });
     this.kafkaService.setEventHandlers(OrderEventKafkaHandlers);
-    await this.kafkaService.bridgeEventsTo(this.event$.subject$);
+    this.kafkaService.bridgeEventsTo(this.event$.subject$);
     this.event$.publisher = this.kafkaService;
     this.event$.register(OrderEventHandlers);
   }
