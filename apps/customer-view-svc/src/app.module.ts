@@ -39,6 +39,6 @@ export class AppModule implements OnModuleInit {
     this.kafkaService.setEventHandlers(CustomerEventKafkaHandlers);
     this.kafkaService.bridgeEventsTo(this.event$.subject$);
     this.event$.publisher = this.kafkaService;
-    this.event$.register(CustomerEventHandlers);
+    this.event$.register();
   }
 }
