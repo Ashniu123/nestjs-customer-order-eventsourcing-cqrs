@@ -58,20 +58,19 @@ export class KafkaService
       ...event,
       eventType: event.constructor.name,
     });
-    this.logger.verbose(`Published event: ${message}`);
 
     try {
       await this.producer.send({
         messages: [{ value: message }],
         topic: this.topic,
       });
+      this.logger.verbose(`Published event: ${message}`);
     } catch (error) {
       this.logger.error(`Publishing event error: ${error.stack}`);
     }
   }
 
   async bridgeEventsTo<T extends IEvent>(subject: Subject<T>) {
-    this.logger.verbose(`Bridged event subject: ${JSON.stringify(subject)}`);
     try {
       await this.consumer.subscribe({
         topic: this.topic,
@@ -81,13 +80,10 @@ export class KafkaService
       await this.consumer.run({
         eachMessage: async payload => {
           const { message } = payload;
-          this.logger.verbose(
-            `Bridged event payload: ${JSON.stringify(payload)}`,
-          );
           const { value } = message;
           const parsed = JSON.parse(value.toString('utf8'));
           this.logger.verbose(
-            `Bridged event payload value: ${JSON.stringify(parsed)}`,
+            `Bridged event payload: ${JSON.stringify(parsed)}`,
           );
           const { eventType, ...params } = parsed;
           const event = this.eventHandlers[eventType](...Object.values(params));
@@ -96,7 +92,6 @@ export class KafkaService
       });
     } catch (error) {
       this.logger.error(`Bridged event error: ${error.stack}`);
-      subject.error(error);
     }
   }
 
