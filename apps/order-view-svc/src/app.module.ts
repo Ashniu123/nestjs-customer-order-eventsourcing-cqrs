@@ -1,6 +1,6 @@
 import { KafkaModule } from '@kafka/kafka/kafka.module';
 import { KafkaService } from '@kafka/kafka/kafka.service';
-import { orderKafkaConfig } from '@kafka/kafka/order-kafka.config';
+import { orderKafkaConfig } from '@order/order-common/order-kafka.config';
 import { Module, OnModuleInit } from '@nestjs/common';
 import { CqrsModule, EventBus } from '@nestjs/cqrs';
 import { MongooseModule } from '@nestjs/mongoose/dist';

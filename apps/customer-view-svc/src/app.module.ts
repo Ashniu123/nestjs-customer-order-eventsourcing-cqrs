@@ -1,5 +1,5 @@
 import { CustomerEventKafkaHandlers } from '@customer/customer-common/customer-events.kafka-handlers';
-import { customerKafkaConfig } from '@kafka/kafka/customer-kafka.config';
+import { customerKafkaConfig } from '@customer/customer-common/customer-kafka.config';
 import { KafkaModule } from '@kafka/kafka/kafka.module';
 import { KafkaService } from '@kafka/kafka/kafka.service';
 import { Module, OnModuleInit } from '@nestjs/common';
